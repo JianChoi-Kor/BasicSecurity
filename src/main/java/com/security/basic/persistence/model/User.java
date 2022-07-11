@@ -1,5 +1,6 @@
 package com.security.basic.persistence.model;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import java.util.Collection;
 
 
 @Entity
+@Builder
 @Getter
 @Setter
 @Table(name = "users")
