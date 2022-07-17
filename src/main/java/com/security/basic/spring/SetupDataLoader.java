@@ -9,7 +9,9 @@ import com.security.basic.persistence.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.context.SecurityContextPersistenceFilter;
 import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;

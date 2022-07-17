@@ -1,6 +1,8 @@
 package com.security.basic.persistence.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -19,7 +21,7 @@ public class Role {
 
     private String name;
 
-    @ManyToMany(mappedBy = "roles")
+    @ManyToMany(mappedBy = "roles", fetch = FetchType.EAGER)
     private Collection<User> users;
 
     @ManyToMany

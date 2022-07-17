@@ -39,12 +39,12 @@ public class WebSecurityConfigure {
         //permitAll시 해당 url에 대한 인증 정보를 요구하지 않는다.
         //authenticated시 해당 url에는 인증 정보를 요구한다.(로그인 필요)
         //hasAnyRole시 해당 url에는 특정 권한 정보를 요구한다.
-//    http
-//        .authorizeRequests()
-//        .antMatchers("/login", "/home").permitAll()
+    http
+        .authorizeRequests()
+        .antMatchers("/home").permitAll()
 //        .antMatchers("/user").hasAnyRole("USER", "ADMIN")
 //        .antMatchers("/admin").hasAnyRole("ADMIN")
-//        .anyRequest().authenticated();
+        .anyRequest().authenticated();
 
         http
                 .authorizeHttpRequests()
