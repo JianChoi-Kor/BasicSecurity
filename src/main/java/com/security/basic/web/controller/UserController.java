@@ -26,13 +26,13 @@ public class UserController {
         return "/admin";
     }
 
-    @PreAuthorize("hasAnyAuthority('READ','WRITE')")
+    @PreAuthorize("hasAnyAuthority('READ_PRIVILEGE','WRITE_PRIVILEGE')")
     @GetMapping("/read")
     public String read() {
         return "/read";
     }
 
-    @PreAuthorize("hasAnyAuthority('WRITE')")
+    @PreAuthorize("hasAnyAuthority('WRITE_PRIVILEGE')")
     @GetMapping("/write")
     public String write() {
         return "/write";
