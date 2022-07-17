@@ -1,6 +1,5 @@
 package com.security.basic.persistence.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,20 +8,21 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
 @Table(name = "privileges")
 public class Privilege {
 
+    //고유값
     @Id
-    @Column(unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
 
     private String name;
 
-    @ManyToMany(mappedBy = "privileges", fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "privileges")
     private Collection<Role> roles;
 
     public Privilege(final String name) {
